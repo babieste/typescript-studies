@@ -1,0 +1,20 @@
+{
+  "name": "typescript-studies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no script specified\" && exit 1",
+    "compile": "tsc index.ts && node index.js"
+  },
+  "keywords": [],
+  "author": "Bárbara Este Fernandez",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^17.0.35",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
