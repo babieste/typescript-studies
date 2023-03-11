@@ -36,7 +36,7 @@
  *  constant size to retrieve the random node.
  *
  * Time complexity: O(N)
- *  Space complexity is N, where N is the size of the list,
+ *  Time complexity is N, where N is the size of the list,
  *  because we iterate over the linked list exactly one time.
  */
 
