@@ -29,6 +29,17 @@
  *  2) The linked list could not fit into memory
  */
 
+/**
+ * Complexity Analisys:
+ * Space complexity: O(1)
+ *  Space complexity is constant because we use auxiliary variables of
+ *  constant size to retrieve the random node.
+ *
+ * Time complexity: O(N)
+ *  Space complexity is N, where N is the size of the list,
+ *  because we iterate over the linked list exactly one time.
+ */
+
 import { LinkedListNode as ListNode } from "../schema/linked-list";
 
 class Solution {
