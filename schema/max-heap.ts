@@ -1,13 +1,31 @@
 export class MaxHeap {
-  private heap: Array<number> = [];
-  private heapSize = 0;
+  public heap: Array<number> = [];
+  public heapSize = 0;
 
-  public static from(array: Array<number>): MaxHeap {
+  public static build(array: Array<number>): MaxHeap {
     const instance = new MaxHeap();
     instance.heap = array;
     instance.heapSize = array.length;
-    instance.buildMaxHeap();
+
+    for (let i = Math.floor(instance.heap.length / 2); i >= 0; i--) {
+      instance.maxHeapify(i);
+    }
+
     return instance;
+  }
+
+  public static heapsort(array: Array<number>): Array<number> {
+    const instance = MaxHeap.build(array);
+
+    for (let i = instance.heap.length - 1; i >= 1; i--) {
+      const temp = instance.heap[0];
+      instance.heap[0] = instance.heap[i];
+      instance.heap[i] = temp;
+      instance.heapSize = instance.heapSize - 1;
+      instance.maxHeapify(0);
+    }
+
+    return instance.heap;
   }
 
   protected constructor() {}
@@ -56,12 +74,6 @@ export class MaxHeap {
       this.heap[index] = this.heap[largest];
       this.heap[largest] = temp;
       this.maxHeapify(largest);
-    }
-  }
-
-  protected buildMaxHeap(): void {
-    for (let i = Math.floor(this.heap.length / 2); i >= 0; i--) {
-      this.maxHeapify(i);
     }
   }
 }
