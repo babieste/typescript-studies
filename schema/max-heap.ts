@@ -17,7 +17,7 @@ export class MaxHeap {
   public static heapsort(array: Array<number>): Array<number> {
     const instance = MaxHeap.build(array);
 
-    for (let i = instance.heap.length - 1; i >= 1; i--) {
+    for (let i = instance.heapSize - 1; i > 0; i--) {
       const temp = instance.heap[0];
       instance.heap[0] = instance.heap[i];
       instance.heap[i] = temp;
@@ -59,13 +59,13 @@ export class MaxHeap {
     const right = this.right(index);
     let largest = -1;
 
-    if (left <= this.heapSize && this.heap[left] > this.heap[index]) {
+    if (left < this.heapSize && this.heap[left] > this.heap[index]) {
       largest = left;
     } else {
       largest = index;
     }
 
-    if (right <= this.heapSize && this.heap[right] > this.heap[largest]) {
+    if (right < this.heapSize && this.heap[right] > this.heap[largest]) {
       largest = right;
     }
 
