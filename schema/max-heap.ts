@@ -30,6 +30,16 @@ export class MaxHeap {
 
   protected constructor() {}
 
+  public extractMaximum(): number {
+    const root = this.heap[0];
+
+    this.heap[0] = this.heap[this.heapSize - 1];
+    this.heapSize = this.heapSize - 1;
+    this.maxHeapify(0);
+
+    return root;
+  }
+
   public parent(index: number): number {
     if (index <= 0) {
       return -1;
