@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.coverage/lcov-report/'
+          path: './coverage/lcov-report/'
       - name: GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
