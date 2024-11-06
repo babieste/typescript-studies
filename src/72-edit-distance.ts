@@ -1,26 +1,29 @@
-function minDistance(word1: string, word2: string): number {
+/**
+ * Problem: 72. Edit Distance (https://leetcode.com/problems/edit-distance/)
+ */
+export function minDistance(word1: string, word2: string): number {
   if (word1.length === 0 && word2.length === 0) {
     return 0;
   }
 
-  /** 
-        There can only be |word1|x|word2| possible unique recursive
-        calls, since there are only this many distinct (i, j) pairs
-        to serve as the argument parameters of recursive calls.
-        
-        dp[i][j] represents the minimum number of diferences
-        between word1[0], word1[1], ... word1[i] and the segment
-        of word2 ending at j.
-     */
+  /**
+   * There can only be `|word1|x|word2|` possible unique recursive
+   * calls, since there are only this many distinct `(i, j)` pairs
+   * to serve as the argument parameters of recursive calls.
+   *
+   * `dp[i][j]` represents the minimum number of diferences
+   * between `word1[0], word1[1], ... word1[i]` and the segment
+   * of `word2` ending at `j`.
+   */
   const dp: number[][] = Array.from({ length: word1.length + 1 }, () =>
     Array(word2.length + 1).fill(0)
   );
 
   /**
-        Initializes the first row and column. For the string edit distance problem,
-        cells (i, 0) and (0, i) correspond to matching length-i strings
-        against the empty string. This requires exactly i insertions/deletions.
-     */
+   * Initializes the first row and column. For the string edit distance problem,
+   * cells `(i, 0)` and `(0, i)` correspond to matching length-i strings
+   * against the empty string. This requires exactly `i` insertions/deletions.
+   */
   for (let j = 0; j <= word2.length; j++) {
     dp[0][j] = j;
   }
