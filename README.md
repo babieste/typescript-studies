@@ -1,3 +1,5 @@
+[![Tests](https://github.com/babieste/typescript-studies/actions/workflows/test.yml/badge.svg)](https://github.com/babieste/typescript-studies/actions/workflows/test.yml)
+
 # Data Structures and Algorithms in TypeScript
 
 The primary goal of this repository is to store and organize my solutions to various LeetCode problems and classical algorithms, all written in **TypeScript**.
