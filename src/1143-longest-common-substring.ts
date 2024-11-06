@@ -3,9 +3,11 @@ function longestCommonSubsequence(text1: string, text2: string): number {
   const n = text2.length;
 
   /** dp[i][j] represents the LCS of text1[0...i] and text2[0...j] */
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(-1));
+  const topDownMemoMatrix = Array.from({ length: m + 1 }, () =>
+    Array(n + 1).fill(-1)
+  );
 
-  //   return topDownLcs(text1, text2, 0, 0, dp);
+  //   return topDownLcs(text1, text2, 0, 0, topDownMemoMatrix);
   //   return bottomUpLcs(text1, text2);
 }
 
