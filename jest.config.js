@@ -1,8 +1,8 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 module.exports = {
   collectCoverage: true,
+  collectCoverageFrom: ["*.ts"],
   coverageDirectory: "../coverage",
-  coverageReporters: [],
   rootDir: "src",
   testEnvironment: "node",
   transform: {

@@ -8,7 +8,7 @@ function longestCommonSubsequence(text1: string, text2: string): number {
   );
 
   //   return topDownLcs(text1, text2, 0, 0, topDownMemoMatrix);
-  //   return bottomUpLcs(text1, text2);
+  return bottomUpLcs(text1, text2);
 }
 
 /** Top-down approach with recursion */
