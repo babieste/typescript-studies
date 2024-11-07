@@ -6,7 +6,7 @@ export function minRefuelStops(
   let currentFuel = startFuel;
   let currentPosition = 0;
   let stops = 0;
-  let visitedGasStationsPositions = [];
+  let visitedGasStationsPositions: number[] = [];
 
   if (startFuel >= target) {
     return 0;

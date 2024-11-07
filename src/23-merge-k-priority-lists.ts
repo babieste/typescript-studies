@@ -28,9 +28,11 @@
 
 import { LinkedListNode as ListNode } from "../schema/linked-list";
 
-function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+export function mergeKLists(_lists: Array<ListNode | null>): ListNode | null {
   // Remove empty lists
-  lists = lists.filter((listNode) => listNode);
+  let lists = _lists.filter((listNode): listNode is ListNode =>
+    Boolean(listNode)
+  );
 
   if (!lists.length) {
     return null;
@@ -46,11 +48,19 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 
     if (!currentNode) {
       currentNode = new ListNode(lists[index].val);
-      lists[index] = lists[index].next;
+
+      if (lists[index].next) {
+        lists[index] = lists[index].next;
+      }
+
       head = currentNode;
     } else {
       currentNode.next = new ListNode(lists[index].val);
-      lists[index] = lists[index].next;
+
+      if (lists[index].next) {
+        lists[index] = lists[index].next;
+      }
+
       currentNode = currentNode.next;
     }
 
@@ -77,11 +87,4 @@ function getListIndexWithMaximumPriority(lists: ListNode[]) {
   }
 
   return listNodeIndex;
-}
-
-function removeMaxPriorityNode(head: ListNode): ListNode {
-  // Since the linked lists are sorted, the maximum priority node is the head of the linked list.
-  const removedNode = new ListNode(head.val);
-  head = head.next;
-  return removedNode;
 }

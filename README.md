@@ -1,5 +1,4 @@
 [![Tests](https://github.com/babieste/typescript-studies/actions/workflows/test.yml/badge.svg)](https://github.com/babieste/typescript-studies/actions/workflows/test.yml)
-[![Coverage Report](https://github.com/babieste/typescript-studies/actions/workflows/coverage.yml/badge.svg)](https://github.com/babieste/typescript-studies/actions/workflows/coverage.yml)
 
 # Data Structures and Algorithms in TypeScript
 

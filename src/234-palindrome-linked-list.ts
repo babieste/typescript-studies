@@ -32,13 +32,13 @@ function isPalindromeAux(stackNode: ListNode | null): boolean {
     return false;
   }
 
-  let areEqual = stackNode.val === headNode.val;
+  let areEqual = stackNode.val === headNode?.val;
 
   if (areEqual == false) {
     return false;
   }
 
-  headNode = headNode.next;
+  headNode = headNode?.next ?? null;
 
   return true;
 }

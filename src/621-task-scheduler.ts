@@ -3,7 +3,7 @@ export function leastInterval(tasks: string[], n: number): number {
 
   tasks.forEach((task) => {
     if (frequencyMap.has(task)) {
-      const frequency = frequencyMap.get(task);
+      const frequency = frequencyMap.get(task) ?? 0;
       frequencyMap.set(task, frequency + 1);
     } else {
       frequencyMap.set(task, 1);
