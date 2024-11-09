@@ -15,7 +15,7 @@ This repository serves as a way to both practice and track my progress in master
 |   ├── quick-sort.ts
 |   ├── merge-sort.ts
 │   └── ...
-├── /schema/
+├── /data-structures/
 │   ├── linked-list.ts
 │   ├── stack.ts
 │   ├── binary-tree.ts
@@ -28,7 +28,7 @@ This repository serves as a way to both practice and track my progress in master
 ```
 
 - **`/algorithms/`**: Implementations of classic algorithms (sorting, searching, graph algorithms, etc.).
-- **`/schema/`**: Contains implementations of data structures that are used frequently across different solutions and algorithms, such as linked lists, stacks, trees, and others.
+- **`/data-structures/`**: Contains implementations of data structures that are used frequently across different solutions and algorithms, such as linked lists, stacks, trees, and others.
 - **`/src/`**: Solutions to LeetCode problems.
 - **`README.md`**: The documentation you're reading right now.
 
