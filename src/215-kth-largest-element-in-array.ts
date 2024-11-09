@@ -1,4 +1,4 @@
-import { MaxHeap } from "../schema/max-heap";
+import { MaxHeap } from "../data-structures/max-heap";
 
 export function findKthLargest(nums: number[], k: number): number {
   const maxHeap = MaxHeap.build(nums);

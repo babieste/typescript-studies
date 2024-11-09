@@ -1,5 +1,5 @@
-import { LinkedListNode } from "../schema";
-import { LinkedList } from "../schema/linked-list";
+import { LinkedListNode } from "../data-structures";
+import { LinkedList } from "../data-structures/linked-list";
 import { getIntersectionNode } from "./160-intersection-of-two-linked-lists";
 
 describe("160. Intersection of Two Linked Lists", () => {

@@ -1,4 +1,4 @@
-import { BinaryTreeNode as TreeNode } from "../schema/binary-tree";
+import { BinaryTreeNode as TreeNode } from "../data-structures/binary-tree";
 
 export function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
   return traversal(p, q);

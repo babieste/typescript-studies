@@ -20,8 +20,8 @@
  *  need to implement an AVL tree.
  *
  */
-import { LinkedListNode as ListNode } from "../schema/linked-list";
-import { BinaryTreeNode as TreeNode } from "../schema/binary-tree";
+import { LinkedListNode as ListNode } from "../data-structures/linked-list";
+import { BinaryTreeNode as TreeNode } from "../data-structures/binary-tree";
 
 function sortedListToBST(head: ListNode | null): TreeNode | null {
   let root: TreeNode | null = null;

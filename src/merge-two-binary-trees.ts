@@ -20,7 +20,7 @@
  * minimum number of nodes from the two given trees.
  * 2) Space complexity : O(m). The depth of the recursion tree can go upto m in the case of a skewed tree.
  */
-import { BinaryTreeNode as TreeNode } from "../schema";
+import { BinaryTreeNode as TreeNode } from "../data-structures";
 
 function mergeTrees(
   root1: TreeNode | null,

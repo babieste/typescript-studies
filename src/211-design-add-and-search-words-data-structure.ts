@@ -1,4 +1,4 @@
-import { TrieNode } from "../schema";
+import { TrieNode } from "../data-structures";
 
 /**
  * @see https://leetcode.com/problems/design-add-and-search-words-data-structure/description/

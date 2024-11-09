@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../schema/binary-tree";
+import { BinaryTreeNode } from "../data-structures/binary-tree";
 /**
  * Description: @see https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
  *

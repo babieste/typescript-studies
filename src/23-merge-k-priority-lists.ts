@@ -26,7 +26,7 @@
  *  N nodes in the final linked list.
  */
 
-import { LinkedListNode as ListNode } from "../schema/linked-list";
+import { LinkedListNode as ListNode } from "../data-structures/linked-list";
 
 export function mergeKLists(_lists: Array<ListNode | null>): ListNode | null {
   // Remove empty lists

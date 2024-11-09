@@ -10,7 +10,7 @@
  * - The number of nodes in the list is in the range [1, 105].
  * - 0 <= Node.val <= 9
  */
-import { LinkedListNode as ListNode } from "../schema/linked-list";
+import { LinkedListNode as ListNode } from "../data-structures/linked-list";
 
 let headNode: ListNode | null = null;
 

@@ -40,7 +40,7 @@
  *  because we iterate over the linked list exactly one time.
  */
 
-import { LinkedListNode as ListNode } from "../schema/linked-list";
+import { LinkedListNode as ListNode } from "../data-structures/linked-list";
 
 class Solution {
   constructor(public readonly head: ListNode) {}

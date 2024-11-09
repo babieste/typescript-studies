@@ -25,7 +25,7 @@
  * - At most 5000 calls will be made to visit, back, and forward.
  */
 
-import { DoubleLinkedNode } from "../schema";
+import { DoubleLinkedNode } from "../data-structures";
 
 class BrowserHistory {
   private currentPage: DoubleLinkedNode;

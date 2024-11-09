@@ -1,4 +1,4 @@
-import { LinkedListNode as ListNode } from "../schema/linked-list";
+import { LinkedListNode as ListNode } from "../data-structures/linked-list";
 
 /** Problem [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/). */
 export function getIntersectionNode(

@@ -1,4 +1,4 @@
-import { TrieNode } from "../schema";
+import { TrieNode } from "../data-structures";
 
 class Trie {
   private head = new TrieNode("");
