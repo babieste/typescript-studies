@@ -1,5 +1,29 @@
 /**
  * Problem: 72. Edit Distance (https://leetcode.com/problems/edit-distance/)
+ *
+ * Let `i` and `j` be the last character of the relevant prefix `P` and `T`,
+ * respectively. There are three pairs of smaller strings after the last
+ * operation, corresponding to the strings after a match/substitution,
+ * insertion or deletion. If we knew the cost of editing these three pairs of
+ * smaller strings, we could decide which option leads to the best solution
+ * and choose that option accordingly. We _can_ learn this cost through the
+ * magic of recursion.
+ *
+ * More precisely, let `D[i, j]` be the minimum number of differences between
+ * `P1, P2,  ..., Pi` and the segment of `T` ending at `j`. `D[i, j]` is the
+ * minimum of the three possible ways to extend smaller strings:
+ *
+ * - If `(Pi = Tj)`, then `D[i-1][j-]`, else `D[i-1][j-1] + 1`. This means we
+ * either match or substitute the ith and jth characters, depending upon whether
+ * the tail characters are the same;
+ *
+ * - `D[i-1][j] + 1`. This means that there is an extra character in the pattern
+ * to account for, so we do not advance the text pointer and pay the cost of an
+ * insertion;
+ *
+ * - `D[i][j-1] + 1`. This means that there is an extra character in the text to
+ * remove, so we do not advance the pattern pointer and pay the cost of a deletion.
+ *
  */
 export function minDistance(word1: string, word2: string): number {
   if (word1.length === 0 && word2.length === 0) {
