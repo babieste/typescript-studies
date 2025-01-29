@@ -69,3 +69,46 @@ export function findMaxFish(grid: number[][]): number {
 
   return Math.max(...s);
 }
+
+function findMaxFishWithDepthFirstSearch(grid: number[][]): number {
+  let answer = 0;
+
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      if (grid[i][j] > 0) {
+        answer = Math.max(answer, depthFirstSearch(grid, i, j));
+      }
+    }
+  }
+
+  return answer;
+}
+
+function depthFirstSearch(grid: number[][], row: number, col: number): number {
+  if (grid[row][col] === 0) {
+    return 0;
+  }
+
+  let availableFish = grid[row][col];
+
+  // Mark as visited by removing all the fish.
+  grid[row][col] = 0;
+
+  if (row - 1 >= 0 && grid[row - 1][col] > 0) {
+    availableFish += depthFirstSearch(grid, row - 1, col);
+  }
+
+  if (row + 1 < grid.length && grid[row + 1][col] > 0) {
+    availableFish += depthFirstSearch(grid, row + 1, col);
+  }
+
+  if (col - 1 >= 0 && grid[row][col - 1] > 0) {
+    availableFish += depthFirstSearch(grid, row, col - 1);
+  }
+
+  if (col + 1 <= grid[0].length && grid[row][col + 1] > 0) {
+    availableFish += depthFirstSearch(grid, row, col + 1);
+  }
+
+  return availableFish;
+}
