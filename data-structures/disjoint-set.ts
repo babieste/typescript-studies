@@ -1,44 +1,44 @@
 export class DisjointSet {
-  private readonly parent: number[];
-  private readonly rank: number[];
+    private readonly parent: Record<number, number> = {};
+    private readonly rank: Record<number, number> = {};
 
-  public constructor(size: number) {
-    this.parent = new Array(size);
-    this.rank = new Array(size).fill(0);
-
-    for (let i = 0; i < size; i++) {
-      this.parent[i] = i;
-    }
-  }
-
-  public find(i: number): number {
-    if (this.parent[i] === i) {
-      return i;
+    public constructor(size: number) {
+        for (let i = 0; i < size; i++) {
+            this.parent[i] = i;
+            this.rank[i] = 0;
+        }
     }
 
-    this.parent[i] = this.find(this.parent[i]);
-    return this.parent[i];
-  }
+    public find(i: number): number {
+        if (this.parent[i] === i) {
+            return i;
+        }
 
-  public union(i: number, j: number): void {
-    const rootI = this.find(i);
-    const rootJ = this.find(j);
-
-    if (rootI === rootJ) {
-      return;
+        this.parent[i] = this.find(this.parent[i]);
+        return this.parent[i];
     }
 
-    if (this.rank[rootI] < this.rank[rootJ]) {
-      this.parent[rootI] = rootJ;
-    } else if (this.rank[rootI] > this.rank[rootJ]) {
-      this.parent[rootJ] = rootI;
-    } else {
-      this.parent[rootJ] = rootI;
-      this.rank[rootI]++;
+    public union(u: number, v: number): void {
+        this.link(this.find(u), this.find(v));
     }
-  }
 
-  public areConnected(i: number, j: number): boolean {
-    return this.find(i) === this.find(j);
-  }
+    private link(u: number, v: number): void {
+        if (u === v) {
+            return;
+        }
+
+        if (this.rank[u] > this.rank[v]) {
+            this.parent[v] = u;
+        } else {
+            this.parent[u] = v;
+
+            if (this.rank[u] === this.rank[v]) {
+                this.rank[v]++;
+            }
+        }
+    }
+
+    public areConnected(i: number, j: number): boolean {
+        return this.find(i) === this.find(j);
+    }
 }
